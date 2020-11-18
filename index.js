@@ -1,4 +1,5 @@
 const grilla = document.querySelector(".grilla");
+const items = ["🍉", "🍐", "🍌", "🍇", "🍎", "🍊"];
 
 const crearGrilla = (ancho, alto) => {
   const anchoDeGrilla = 50 * ancho;
@@ -7,9 +8,8 @@ const crearGrilla = (ancho, alto) => {
   const obtenerNumeroAlAzar = () => {
     return Math.floor(Math.random() * 6);
   };
-  const items = ["🍉", "🍐", "🍌", "🍇", "🍎", "🍊"];
 
-  const obtenerFrutaAlAzar = (items) => {
+  const obtenerFrutaAlAzar = () => {
     return items[obtenerNumeroAlAzar()];
   };
 
@@ -28,7 +28,7 @@ const crearGrilla = (ancho, alto) => {
   }
 };
 
-crearGrilla(6, 6); // me permite cambiar la cantidad de filas y columnas
+//crearGrilla(6, 6); // me permite cambiar la cantidad de filas y columnas
 
 //😀 ej muestra de ejemplo:
 
@@ -49,3 +49,20 @@ crearGrilla(6, 6); // me permite cambiar la cantidad de filas y columnas
 // facil 9*9
 // mediano 6*6
 // dificil 4*4
+
+let dificultad = prompt("Elija una dificultad: Facil, Moderado o Dificil");
+
+if (dificultad == "facil") {
+  console.log("crear grilla 9");
+  crearGrilla(9, 9);
+}
+
+if (dificultad == "moderado") {
+  console.log("crear grilla 6");
+  crearGrilla(6, 6);
+}
+
+if (dificultad == "dificil") {
+  console.log("crear grilla 4");
+  crearGrilla(4, 4);
+}
